@@ -1,6 +1,14 @@
 {
   "name": "Getting Started Example",
   "description": "Build an Extension!",
+  "content_security_policy": {
+    "sandbox": "default-src 'self';"
+  },
+  "sandbox": {
+    "pages": [
+      "sandbox.html"
+    ]
+  },
   "version": "1.0",
   "manifest_version": 3,
   "background": {

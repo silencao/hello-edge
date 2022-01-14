@@ -18,3 +18,10 @@ function setPageBackgroundColor() {
     document.body.style.backgroundColor = color;
   });
 }
+
+// new WebSocket('ws://localhost:3000');
+/*
+
+fetch('http://192.168.0.81:3000/src/main.ts')
+.then(s => s.text())
+.then(t => console.log(t));*/

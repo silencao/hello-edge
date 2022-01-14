@@ -1,3 +1,3 @@
 <template>
-  hello-edge
+  <button>hello-edge</button>
 </template>
