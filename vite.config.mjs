@@ -7,6 +7,7 @@ export default defineConfig({
     build: {
         rollupOptions: {
             input: {
+                vue: 'vue',
                 popup: 'src/main.ts',
                 background: 'src/background.ts'
             },
