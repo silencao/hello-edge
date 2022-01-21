@@ -1,21 +1,28 @@
+import vue     from '@vitejs/plugin-vue';
 import {build} from 'vite';
 // import resolve    from '@rollup/plugin-node-resolve';
 // import terser from 'rollup-plugin-terser';
 
 build({
-    // plugins: [
-    //     resolve()
-    // ],
+    configFile: false,
+    envFile: false,
+    plugins: [vue()],
     build: {
-        outDir: 'res',
-        minify: false,
-        // minify: 'terser',
+        watch: {
+            include: 'src/**'
+        },
         rollupOptions: {
-            // external: ['vue'],
-            // treeshake: false,
-            input  : 'raw/vue.runtime.esm-browser.js',
-
-
+            external: ['vue'],
+            input: {
+                popup: 'src/popup.ts',
+                background: 'src/background.ts',
+            },
+            output: {
+                entryFileNames: '[name].js',
+                paths: {
+                    vue: '/dist/vue.js',
+                }
+            }
         }
     }
 })

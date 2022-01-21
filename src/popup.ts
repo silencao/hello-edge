@@ -1,16 +1,21 @@
-let changeColor = document.getElementById("changeColor");
+import { createApp } from 'vue';
+import App from './App.vue';
 
-changeColor.addEventListener("click", async () => {
-  let [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
+createApp(App).mount('#app');
 
-  chrome.scripting.executeScript({
-    target: { tabId: tab.id },
-    function: setPageBackgroundColor,
-  });
-});
-
-function setPageBackgroundColor() {
-  chrome.storage.sync.get("color", ({ color }) => {
-    document.body.style.backgroundColor = color;
-  });
-}
+// let changeColor = document.getElementById("changeColor");
+//
+// changeColor.addEventListener("click", async () => {
+//   let [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
+//
+//   chrome.scripting.executeScript({
+//     target: { tabId: tab.id },
+//     function: setPageBackgroundColor,
+//   });
+// });
+//
+// function setPageBackgroundColor() {
+//   chrome.storage.sync.get("color", ({ color }) => {
+//     document.body.style.backgroundColor = color;
+//   });
+// }

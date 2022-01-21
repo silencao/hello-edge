@@ -1,5 +1,4 @@
-// import * as Vue from "vue";
-import 'vue';
-// Vue.createApp(function App() {
-//     return 'hello world';
-// }).mount('#app');
+console.log(process.execPath);
+console.log(process.execArgv);
+console.log(process.argv0);
+console.log(process.argv);
